@@ -10,21 +10,22 @@
 
 #include "stdint.h"
 
-	MotorPwmInterfaceInit();
+typedef uint8_t std_return_type;
+#define E_OK 1
+#define E_NOT_OK 0
+#define IDLE_PULSE 1500
+#define SPEED_PWM_CONVERSION_FACTOR 5
 
-	uint16_t GetLeftSideMotorSpeed();
+	std_return_type MotorPwmInterfaceInit();
 
-	uint16_t GetRightSideMotorSpeed();
+	int32_t GetLeftSideMotorPulse();
 
-	uint8_t SetLeftSideMotorSpeed(uint8_t speed);
+	int32_t GetRightSideMotorPulse();
 
-	uint8_t SetRigthSideMotorSpeed(uint8_t speed);
+	std_return_type SetLeftSideMotorSpeed(int8_t speed);
 
-	typedef struct {
-		uint16_t right_side_motor_pulse;
-		uint16_t left_side_motor_pulse;
-	} MotorPwmPulse;
+	std_return_type SetRigthSideMotorSpeed(int8_t speed);
 
-	uint16_t CalcPulse(uint8_t speed);
+
 
 #endif /* INC_MOTOR_PWM_INTERFACE_H_ */

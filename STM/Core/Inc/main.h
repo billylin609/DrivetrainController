@@ -42,12 +42,15 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "uart_joy_input.h"
+#include "motor_pwm_interface.h"
+#include "arcade_controller.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-
+extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim4;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
