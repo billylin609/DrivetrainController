@@ -8,7 +8,11 @@
 #ifndef INC_ARCADE_CONTROLLER_H_
 #define INC_ARCADE_CONTROLLER_H_
 
-#include "stdint.h"
+#include "main.h"
+#include "generic_data_type.h"
+#include "motor_pwm_interface.h"
 
+
+std_return_type arcade_drive(int8_t rotate, int8_t vertical_speed);
 
 #endif /* INC_ARCADE_CONTROLLER_H_ */

@@ -8,11 +8,10 @@
 #ifndef INC_MOTOR_PWM_INTERFACE_H_
 #define INC_MOTOR_PWM_INTERFACE_H_
 
-#include "stdint.h"
+#include "main.h"
+#include "generic_data_type.h"
 
-typedef uint8_t std_return_type;
-#define E_OK 1
-#define E_NOT_OK 0
+
 #define IDLE_PULSE 1500
 #define SPEED_PWM_CONVERSION_FACTOR 5
 

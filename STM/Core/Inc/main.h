@@ -45,6 +45,9 @@ extern "C" {
 #include "uart_joy_input.h"
 #include "motor_pwm_interface.h"
 #include "arcade_controller.h"
+#include "generic_data_type.h"
+#include "stdint.h"
+#include <stdlib.h>
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -60,7 +63,6 @@ extern TIM_HandleTypeDef htim4;
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
 /* USER CODE END EM */
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);

@@ -6,7 +6,6 @@
  *      Author: linyuchen
  */
 #include "motor_pwm_interface.h"
-#include "main.h"
 
 /*---------private data structure and methods--------------------*/
 typedef struct {
