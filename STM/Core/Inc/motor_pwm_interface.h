@@ -12,8 +12,8 @@
 #include "generic_data_type.h"
 
 
-#define IDLE_PULSE 1500
-#define SPEED_PWM_CONVERSION_FACTOR 5
+#define IDLE_PULSE 4500
+#define SPEED_PWM_CONVERSION_FACTOR 15
 
 	std_return_type MotorPwmInterfaceInit();
 
