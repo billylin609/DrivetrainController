@@ -28,21 +28,21 @@ static uint32_t CalcPulse(int8_t speed) {
 
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 	if(htim->Instance == htim3.Instance) {
-		if(htim->Channel == HAL_TIM_CHANNEL_1) {
+		if(htim->Channel == TIM_CHANNEL_1) {
 			htim->Instance->CCR1 = GetLeftSideMotorPulse();
-		} else if(htim->Channel == HAL_TIM_CHANNEL_2) {
+		} else if(htim->Channel == TIM_CHANNEL_2) {
 			htim->Instance->CCR2 = GetLeftSideMotorPulse();
-		} else if(htim->Channel == HAL_TIM_CHANNEL_3) {
+		} else if(htim->Channel == TIM_CHANNEL_3) {
 			htim->Instance->CCR3= GetLeftSideMotorPulse();
 		} else {
 			//DO NOTHING
 		}
 	} else if(htim->Instance == htim4.Instance) {
-		if(htim->Channel == HAL_TIM_CHANNEL_1) {
+		if(htim->Channel == TIM_CHANNEL_1) {
 			htim->Instance->CCR1 = GetLeftSideMotorPulse();
-		} else if(htim->Channel == HAL_TIM_CHANNEL_2) {
+		} else if(htim->Channel == TIM_CHANNEL_2) {
 			htim->Instance->CCR2 = GetLeftSideMotorPulse();
-		} else if(htim->Channel == HAL_TIM_CHANNEL_3) {
+		} else if(htim->Channel == TIM_CHANNEL_3) {
 			htim->Instance->CCR3= GetLeftSideMotorPulse();
 		} else {
 			//DO NOTHING
@@ -62,9 +62,9 @@ std_return_type MotorPwmInterfaceInit() {
 	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, IDLE_PULSE);
 
 	HAL_TIM_PWM_Init(&htim4);
-	HAL_TIM_PWM_Start_IT(&htim4, HAL_TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start_IT(&htim4, HAL_TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start_IT(&htim4, HAL_TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start_IT(&htim4, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start_IT(&htim4, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start_IT(&htim4, TIM_CHANNEL_3);
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, IDLE_PULSE);
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, IDLE_PULSE);
 	__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, IDLE_PULSE);
