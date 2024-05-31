@@ -3,12 +3,12 @@
  * @brief: update capture compare register and send the motor pulse for
  *
  *  Created on: May 30, 2024
- *      Author: linyu
+ *      Author: linyuchen
  */
 #include "motor_pwm_interface.h"
 #include "main.h"
 
-
+/*---------private data structure and methods--------------------*/
 typedef struct {
 	uint32_t left_side_motor_pulse;
 	uint32_t right_side_motor_pulse;
@@ -24,6 +24,8 @@ static uint32_t CalcPulse(int8_t speed) {
 
 	return speed*SPEED_PWM_CONVERSION_FACTOR+IDLE_PULSE;
 }
+
+/*--------------------------callback-----------------------------*/
 
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 	if(htim->Instance == htim3.Instance) {
@@ -49,7 +51,7 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 	}
 }
 
-
+/*---------public methods--------------------*/
 
 std_return_type MotorPwmInterfaceInit() {
 	HAL_TIM_PWM_Init(&htim3);
