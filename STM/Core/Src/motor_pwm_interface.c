@@ -28,21 +28,21 @@ static uint32_t CalcPulse(int8_t speed) {
 
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 	if(htim->Instance == htim3.Instance) {
-		if(htim->Channel == TIM_CHANNEL_1) {
+		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1) {
 			htim->Instance->CCR1 = GetLeftSideMotorPulse();
-		} else if(htim->Channel == TIM_CHANNEL_2) {
+		} else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2) {
 			htim->Instance->CCR2 = GetLeftSideMotorPulse();
-		} else if(htim->Channel == TIM_CHANNEL_3) {
+		} else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3) {
 			htim->Instance->CCR3= GetLeftSideMotorPulse();
 		} else {
 			//DO NOTHING
 		}
 	} else if(htim->Instance == htim4.Instance) {
-		if(htim->Channel == TIM_CHANNEL_1) {
+		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1) {
 			htim->Instance->CCR1 = GetLeftSideMotorPulse();
-		} else if(htim->Channel == TIM_CHANNEL_2) {
+		} else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2) {
 			htim->Instance->CCR2 = GetLeftSideMotorPulse();
-		} else if(htim->Channel == TIM_CHANNEL_3) {
+		} else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3) {
 			htim->Instance->CCR3= GetLeftSideMotorPulse();
 		} else {
 			//DO NOTHING
