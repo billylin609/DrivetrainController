@@ -6,3 +6,9 @@
  */
 
 #include "uart_joy_input.h"
+
+/*Message Scheme
+ *
+ * +--------------------+------------------+-------------+--------+
+ *  startbit + DEVICE ID   Vertical speed    rotation	    CRC
+ */
