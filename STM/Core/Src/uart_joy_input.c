@@ -28,19 +28,19 @@ void UartHandshake() {
 //		HAL_UART_Transmit(&huart1, &ack_message, 1, 200);
 //	}
 	HAL_UART_Receive(&huart4, UART_rxBuffer, 4, 200);
-	int vertical_speed = 0;
+	int8_t vertical_speed = 0;
 //	if (UART_rxBuffer[1] > 100) {
 //		vertical_speed = UART_rxBuffer[1]-255;
 //	} else {
 		vertical_speed = UART_rxBuffer[1];
 //	}
-	int rotation = 0;
+	int8_t rotation = 0;
 //	if (UART_rxBuffer[2] > 100) {
 //			rotation = UART_rxBuffer[2]-255;
 //		} else {
 			rotation = UART_rxBuffer[2];
 //		}
-	HAL_UART_Transmit(&huart4, &vertical_speed, 1, 200);
+	HAL_UART_Transmit(&huart4, &rotation, 1, 200);
 
 	arcade_drive(rotation, vertical_speed);
 }
@@ -59,6 +59,9 @@ void UartHandshake() {
 ////	}
 //	HAL_UART_Receive_DMA(&huart4, UART1_rxBuffer, 4);
 //}
+
+
+
 
 //Note: code barely worked -> need to look into why the negative value does not work  -> value is there not cannot be recongnized
 // Code need clean up

@@ -15,7 +15,7 @@ typedef struct {
 
 static volatile MotorPwmPulse motor_output;
 
-static uint32_t CalcPulse(int speed) {
+static uint32_t CalcPulse(int8_t speed) {
 	//speed will be set to idle if invalid speed input
 	if (speed >= 100 || speed <= -100) {
 		speed = 0;
@@ -39,11 +39,11 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 		}
 	} else if(htim->Instance == htim4.Instance) {
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1) {
-			htim->Instance->CCR1 = GetLeftSideMotorPulse();
+			htim->Instance->CCR1 = GetRightSideMotorPulse();
 		} else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2) {
-			htim->Instance->CCR2 = GetLeftSideMotorPulse();
+			htim->Instance->CCR2 = GetRightSideMotorPulse();
 		} else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3) {
-			htim->Instance->CCR3= GetLeftSideMotorPulse();
+			htim->Instance->CCR3= GetRightSideMotorPulse();
 		} else {
 			//DO NOTHING
 		}
@@ -83,12 +83,12 @@ uint32_t GetRightSideMotorPulse() {
 	return motor_output.right_side_motor_pulse;
 }
 
-std_return_type SetLeftSideMotorSpeed(int left_side_speed) {
+std_return_type SetLeftSideMotorSpeed(int8_t left_side_speed) {
 	motor_output.left_side_motor_pulse = CalcPulse(left_side_speed);
 	return E_OK;
 }
 
-std_return_type SetRightSideMotorSpeed(int right_side_speed) {
+std_return_type SetRightSideMotorSpeed(int8_t right_side_speed) {
 	motor_output.right_side_motor_pulse = CalcPulse(right_side_speed);
 
 	return E_OK;

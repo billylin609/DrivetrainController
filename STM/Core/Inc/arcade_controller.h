@@ -12,6 +12,6 @@
 #include "motor_pwm_interface.h"
 #include "generic_data_type.h"
 
-std_return_type arcade_drive(int rotate, int vertical_speed);
+std_return_type arcade_drive(int8_t rotate, int8_t vertical_speed);
 
 #endif /* INC_ARCADE_CONTROLLER_H_ */

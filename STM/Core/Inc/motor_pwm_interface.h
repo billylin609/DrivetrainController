@@ -21,9 +21,9 @@
 
 	uint32_t GetRightSideMotorPulse();
 
-	std_return_type SetLeftSideMotorSpeed(int speed);
+	std_return_type SetLeftSideMotorSpeed(int8_t speed);
 
-	std_return_type SetRightSideMotorSpeed(int speed);
+	std_return_type SetRightSideMotorSpeed(int8_t speed);
 
 
 
