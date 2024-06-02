@@ -17,8 +17,7 @@
     _a > _b ? _a : _b;       \
 })
 
-
-std_return_type arcade_drive(int8_t rotate, int8_t vertical_speed){
+std_return_type arcade_drive(int rotate, int vertical_speed){
     /*Drives the robot using arcade drive.
      *Note: the input from UART interface need to be converted to -100 to 100 before function call
      * */
@@ -28,26 +27,26 @@ std_return_type arcade_drive(int8_t rotate, int8_t vertical_speed){
 		return E_NOT_OK;
 	}
 
-    int8_t maximum = max(abs(rotate), abs(vertical_speed));
-    int8_t total = vertical_speed + rotate;
-    int8_t difference = vertical_speed - rotate;
+    int maximum = max(abs(rotate), abs(vertical_speed));
+    int total = vertical_speed + rotate;
+    int difference = vertical_speed - rotate;
 
     /*set speed according to the quadrant that the values are in*/
     if (vertical_speed >= 0){
         if (rotate >= 0){ // I quadrant
         	SetLeftSideMotorSpeed(maximum);
-        	SetRigthSideMotorSpeed(difference);
+        	SetRightSideMotorSpeed(difference);
         } else{            // II quadrant
         	SetLeftSideMotorSpeed(total);
-        	SetRigthSideMotorSpeed(maximum);
+        	SetRightSideMotorSpeed(maximum);
         }
     } else{
         if (rotate >= 0){  // IV quadrant
-        	SetLeftSideMotorSpeed(total);
-        	SetRigthSideMotorSpeed(-maximum);
+        	HAL_UART_Transmit(&huart4, &total, 1, 200);
+        	SetRightSideMotorSpeed(-maximum);
         } else{           // III quadrant
         	SetLeftSideMotorSpeed(-maximum);
-        	SetRigthSideMotorSpeed(difference);
+        	SetRightSideMotorSpeed(difference);
         }
     }
 

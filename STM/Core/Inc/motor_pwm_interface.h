@@ -17,13 +17,13 @@
 
 	std_return_type MotorPwmInterfaceInit();
 
-	int32_t GetLeftSideMotorPulse();
+	uint32_t GetLeftSideMotorPulse();
 
-	int32_t GetRightSideMotorPulse();
+	uint32_t GetRightSideMotorPulse();
 
-	std_return_type SetLeftSideMotorSpeed(int8_t speed);
+	std_return_type SetLeftSideMotorSpeed(int speed);
 
-	std_return_type SetRigthSideMotorSpeed(int8_t speed);
+	std_return_type SetRightSideMotorSpeed(int speed);
 
 
 

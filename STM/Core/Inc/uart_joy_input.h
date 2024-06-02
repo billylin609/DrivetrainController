@@ -8,6 +8,9 @@
 #ifndef INC_UART_JOY_INPUT_H_
 #define INC_UART_JOY_INPUT_H_
 
+#include "main.h"
+#include "generic_data_type.h"
 
+void UartDmaSet();
 
 #endif /* INC_UART_JOY_INPUT_H_ */

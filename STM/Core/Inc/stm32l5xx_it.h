@@ -58,7 +58,7 @@ void SysTick_Handler(void);
 void DMA1_Channel1_IRQHandler(void);
 void TIM3_IRQHandler(void);
 void TIM4_IRQHandler(void);
-void USART1_IRQHandler(void);
+void UART4_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */

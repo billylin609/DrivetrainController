@@ -15,7 +15,7 @@ typedef struct {
 
 static volatile MotorPwmPulse motor_output;
 
-static uint32_t CalcPulse(int8_t speed) {
+static uint32_t CalcPulse(int speed) {
 	//speed will be set to idle if invalid speed input
 	if (speed >= 100 || speed <= -100) {
 		speed = 0;
@@ -75,21 +75,20 @@ std_return_type MotorPwmInterfaceInit() {
 	return E_OK;
 }
 
-int32_t GetLeftSideMotorPulse() {
+uint32_t GetLeftSideMotorPulse() {
 	return motor_output.left_side_motor_pulse;
 }
 
-int32_t GetRightSideMotorPulse() {
+uint32_t GetRightSideMotorPulse() {
 	return motor_output.right_side_motor_pulse;
 }
 
-std_return_type SetLeftSideMotorSpeed(int8_t left_side_speed) {
+std_return_type SetLeftSideMotorSpeed(int left_side_speed) {
 	motor_output.left_side_motor_pulse = CalcPulse(left_side_speed);
-
 	return E_OK;
 }
 
-std_return_type SetRightSideMotorSpeed(int8_t right_side_speed) {
+std_return_type SetRightSideMotorSpeed(int right_side_speed) {
 	motor_output.right_side_motor_pulse = CalcPulse(right_side_speed);
 
 	return E_OK;

@@ -42,8 +42,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "uart_joy_input.h"
 #include "motor_pwm_interface.h"
+#include "uart_joy_input.h"
 #include "arcade_controller.h"
 #include "generic_data_type.h"
 #include "stdint.h"
@@ -54,6 +54,7 @@ extern "C" {
 /* USER CODE BEGIN ET */
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim4;
+extern UART_HandleTypeDef huart4;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
