@@ -120,6 +120,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   //UartHandshake();
   MotorPwmInterfaceInit();
+  UartHandshake();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -127,7 +128,6 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	UartHandshake();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

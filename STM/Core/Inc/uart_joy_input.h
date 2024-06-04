@@ -11,6 +11,6 @@
 #include "main.h"
 #include "generic_data_type.h"
 
-void UartDmaSet();
+void UartHandshake();
 
 #endif /* INC_UART_JOY_INPUT_H_ */
