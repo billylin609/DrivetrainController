@@ -11,6 +11,8 @@
 #include "main.h"
 #include "generic_data_type.h"
 
+#define DEVICEID 1
+
 void UartHandshake();
 
 #endif /* INC_UART_JOY_INPUT_H_ */
