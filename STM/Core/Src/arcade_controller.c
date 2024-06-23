@@ -49,9 +49,13 @@ std_return_type arcade_drive(int8_t rotate, int8_t vertical_speed){
 
 
     //logic outline: prioritize turning, if no turning then check forward input
-    if(rotate != 0){
+    if(rotate > 0){
     	SetLeftSideMotorSpeed(rotate);
-       	SetRightSideMotorSpeed(rotate);
+       	SetRightSideMotorSpeed(rotate/2);
+    }
+    else if(rotate < 0) {
+    	SetLeftSideMotorSpeed(rotate);
+    	SetRightSideMotorSpeed(rotate/2);
     }
     else if(vertical_speed != 0){
     	SetLeftSideMotorSpeed(vertical_speed);

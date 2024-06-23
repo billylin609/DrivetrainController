@@ -28,6 +28,7 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l5xx_hal.h"
+
 #include "stm32l5xx_ll_ucpd.h"
 #include "stm32l5xx_ll_bus.h"
 #include "stm32l5xx_ll_cortex.h"
@@ -55,6 +56,7 @@ extern "C" {
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim4;
 extern UART_HandleTypeDef huart4;
+extern IWDG_HandleTypeDef hiwdg;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -65,8 +67,6 @@ extern UART_HandleTypeDef huart4;
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
 /* USER CODE END EM */
-
-void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);

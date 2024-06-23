@@ -28,6 +28,8 @@ void UartHandshake() {
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	//TODO: kick the watchdog if the heartbeat message does not receive properly
+
 	//Implemented the Handshake protocol ground station -> stm -> ground station
 	//TODO: Implement the full CRC8
 	//TODO: Implement heart beat and timeout
@@ -46,6 +48,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 			uint8_t ack_rx_buffer[2] = {vertical_speed, rotation};
 			HAL_UART_Transmit(&huart4, ack_rx_buffer, 2, 200);
+			HAL_IWDG_Refresh(&hiwdg);
 		} else if (UART_rxBuffer[1] == 0b00000010){
 			//Heart beat message
 		}
