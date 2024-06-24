@@ -1,0 +1,5 @@
+../Drivers/STM32L5xx_HAL_Driver/Inc/stm32l5xx_ll_bus.h:565:22:LL_AHB2_GRP1_ForceReset	1
+../Drivers/STM32L5xx_HAL_Driver/Inc/stm32l5xx_ll_bus.h:608:22:LL_AHB2_GRP1_ReleaseReset	1
+../Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_ll_gpio.c:103:13:LL_GPIO_DeInit	9
+../Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_ll_gpio.c:178:13:LL_GPIO_Init	6
+../Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_ll_gpio.c:251:6:LL_GPIO_StructInit	1

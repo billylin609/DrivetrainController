@@ -1,0 +1,5 @@
+if(EXISTS "/mnt/c/Users/linyu/DrivetrainController/test/build/arcade_control_test[1]_tests.cmake")
+  include("/mnt/c/Users/linyu/DrivetrainController/test/build/arcade_control_test[1]_tests.cmake")
+else()
+  add_test(arcade_control_test_NOT_BUILT arcade_control_test_NOT_BUILT)
+endif()

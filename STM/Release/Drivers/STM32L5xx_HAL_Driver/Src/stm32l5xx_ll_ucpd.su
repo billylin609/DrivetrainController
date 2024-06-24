@@ -1,0 +1,3 @@
+../Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_ll_ucpd.c:79:13:LL_UCPD_DeInit	0	static
+../Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_ll_ucpd.c:115:13:LL_UCPD_Init	16	static
+../Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_ll_ucpd.c:143:6:LL_UCPD_StructInit	0	static

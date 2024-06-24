@@ -1,0 +1,7 @@
+..\Core\Src\motor_pwm_interface.c:18:17:CalcPulse	16	static
+..\Core\Src\motor_pwm_interface.c:29:6:HAL_TIM_PWM_PulseFinishedCallback	24	static
+..\Core\Src\motor_pwm_interface.c:55:17:MotorPwmInterfaceInit	8	static
+..\Core\Src\motor_pwm_interface.c:78:10:GetLeftSideMotorPulse	4	static
+..\Core\Src\motor_pwm_interface.c:82:10:GetRightSideMotorPulse	4	static
+..\Core\Src\motor_pwm_interface.c:86:17:SetLeftSideMotorSpeed	16	static
+..\Core\Src\motor_pwm_interface.c:91:17:SetRightSideMotorSpeed	16	static

@@ -1,0 +1,2 @@
+..\Core\Src\uart_joy_input.c:20:6:UartHandshake	2
+..\Core\Src\uart_joy_input.c:30:6:HAL_UART_RxCpltCallback	3

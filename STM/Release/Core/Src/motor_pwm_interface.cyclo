@@ -1,0 +1,6 @@
+../Core/Src/motor_pwm_interface.c:29:6:HAL_TIM_PWM_PulseFinishedCallback	9
+../Core/Src/motor_pwm_interface.c:55:17:MotorPwmInterfaceInit	1
+../Core/Src/motor_pwm_interface.c:78:10:GetLeftSideMotorPulse	1
+../Core/Src/motor_pwm_interface.c:82:10:GetRightSideMotorPulse	1
+../Core/Src/motor_pwm_interface.c:86:17:SetLeftSideMotorSpeed	1
+../Core/Src/motor_pwm_interface.c:91:17:SetRightSideMotorSpeed	1
