@@ -24,6 +24,10 @@ void UartHandshake() {
 
 	HAL_UART_Transmit(&huart4, &handshake_message, 1, 200);
 
+	if (HAL_IWDG_Refresh(&hiwdg) != HAL_OK) {
+				  Error_Handler();
+	}
+
 	HAL_UART_Receive_DMA(&huart4, UART_rxBuffer, 4);
 	HAL_GPIO_TogglePin(GPIOA, LL_GPIO_PIN_9);
 }
