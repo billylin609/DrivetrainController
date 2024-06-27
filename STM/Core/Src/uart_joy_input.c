@@ -37,6 +37,11 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	//TODO: Implement boundary check
 	//TODO: define return message scheme
 
+	/*
+	 * Note: LED red == waiting handshake to be complete
+	 * 		 LED green == update the watchdog with data input
+	 */
+
 	/*--------------------- Note: Debugger does not work with dma use HAL transmit ack ------------------*/
 	if(UART_rxBuffer[0] == 0x81) {
 		if(UART_rxBuffer[1] == 0x03) {
