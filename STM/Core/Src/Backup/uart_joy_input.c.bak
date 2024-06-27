@@ -32,7 +32,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 	//Implemented the Handshake protocol ground station -> stm -> ground station
 	//TODO: Implement the full CRC8
-	//TODO: Implement heart beat and timeout
 	//Implemented header checker
 	//TODO: Implement boundary check
 	//TODO: define return message scheme

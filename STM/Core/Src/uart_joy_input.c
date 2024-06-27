@@ -25,6 +25,7 @@ void UartHandshake() {
 	HAL_UART_Transmit(&huart4, &handshake_message, 1, 200);
 
 	HAL_UART_Receive_DMA(&huart4, UART_rxBuffer, 4);
+	HAL_GPIO_TogglePin(GPIOA, LL_GPIO_PIN_9);
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
@@ -47,9 +48,13 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 			uint8_t ack_rx_buffer[2] = {vertical_speed, rotation};
 			HAL_UART_Transmit(&huart4, ack_rx_buffer, 2, 200);
-			HAL_IWDG_Refresh(&hiwdg);
-		} else if (UART_rxBuffer[1] == 0b00000010){
-			//Heart beat message
+
+			/*watchdog heart beat feature*/
+			HAL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_7);
+			if (HAL_IWDG_Refresh(&hiwdg) != HAL_OK) {
+			  Error_Handler();
+			}
+			HAL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_7);
 		}
 		HAL_UART_Receive_DMA(&huart4, UART_rxBuffer, 4);
 	} else {

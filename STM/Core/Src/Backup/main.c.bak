@@ -109,7 +109,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   //UartHandshake();
   MotorPwmInterfaceInit();
-  UartHandshake();
+  //UartHandshake();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -117,7 +117,13 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	    HAL_Delay(50);
+	 	HAL_GPIO_TogglePin(GPIOA, LL_GPIO_PIN_9);
+	  	HAL_Delay(500);  // because (1/32000)*128*100 so max ~400ms
+	  	HAL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_7);
+	  	if (HAL_IWDG_Refresh(&hiwdg) != HAL_OK) {
+	  		Error_Handler();
+	  	}
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -201,6 +207,8 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
+	  HAL_Delay(200);
+	  HAL_GPIO_TogglePin(GPIOA, LL_GPIO_PIN_9);
   }
   /* USER CODE END Error_Handler_Debug */
 }

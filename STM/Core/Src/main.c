@@ -107,7 +107,7 @@ int main(void)
   MX_ICACHE_Init();
   MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
-  //UartHandshake();
+  HAL_GPIO_TogglePin(GPIOA, LL_GPIO_PIN_9);
   MotorPwmInterfaceInit();
   UartHandshake();
   /* USER CODE END 2 */
@@ -201,6 +201,8 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
+	  HAL_Delay(200);
+	  HAL_GPIO_TogglePin(GPIOA, LL_GPIO_PIN_9);
   }
   /* USER CODE END Error_Handler_Debug */
 }
